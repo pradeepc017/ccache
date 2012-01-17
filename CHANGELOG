@@ -1,0 +1,34 @@
+version 0.6 (2009.10.22, base on svn reversion 85)
+1) rename ccache_create and ccache_destroy to ccache_open and ccache_close
+respectly
+2) when open the cache, use ini style configure file to config the cache
+3) rename the API ccache_replace to ccache_set
+4) all the funcions's first param is cache
+5) when open the cache, init the compare function pointer, so when use the
+cache API does not need to specify the compare function  
+6) add install/uninstall target in Makefile
+7) use Bob Jenkins hash algorithm instead of the previous one.
+
+version 0.5 (2008.11.14)
+1) support hash-rbtree structure when finding a key, user can configure to use
+list or rbtree in Makeile
+2) use ccache_stat_t structure to stat the operation information
+3) use the files, functions, macros rename with the "ccache_" prefix
+
+version 0.4 (2008.10.31)
+1) all API ccache supported now rename with "ccache_" prefix
+2) rename API update_or_insert to replace 
+3) use functor.h/.c file, all the find, insert, update API have a function
+pointer in the functor_t structure
+
+version 0.3 (2008.08.07)
+1) support unfix key size cache
+2) add error.h/error.c, when API return error, use these file can print some
+eror message
+
+version 0.2(2008..04.02)
+1) add update_or_insert and visit_cache API
+
+version 0.1(2008.03.24)
+1) support fix key size cache, find, update, insert API
+
